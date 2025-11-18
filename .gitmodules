@@ -1,0 +1,9 @@
+[submodule "order-service"]
+	path = order-service
+	url = https://github.com/GatoGit/ecommerce-orders-order-service.git
+[submodule "payment-service"]
+	path = payment-service
+	url = https://github.com/GatoGit/ecommerce-orders-payment-service.git
+[submodule "notification-service"]
+	path = notification-service
+	url = https://github.com/GatoGit/ecommerce-orders-notification-service.git
