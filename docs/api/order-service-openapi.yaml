@@ -1,0 +1,59 @@
+openapi: 3.0.1
+info:
+  title: Order Service API
+  version: 1.0.0
+paths:
+  /api/v1/orders:
+    post:
+      summary: Crear nueva orden
+      responses:
+        '201':
+          description: Orden creada
+  /api/v1/orders/{id}:
+    get:
+      summary: Obtener orden por ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /api/v1/orders:
+    get:
+      summary: Listar órdenes por cliente
+      parameters:
+        - name: customerId
+          in: query
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /api/v1/orders/{id}/cancel:
+    patch:
+      summary: Cancelar orden
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /api/v1/orders/{id}/events:
+    get:
+      summary: Historial de eventos de una orden
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK

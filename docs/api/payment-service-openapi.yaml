@@ -1,0 +1,29 @@
+openapi: 3.0.1
+info:
+  title: Payment Service API
+  version: 1.0.0
+paths:
+  /api/v1/payments/{orderId}:
+    get:
+      summary: Consultar estado de pago
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /api/v1/payments/{orderId}/retry:
+    post:
+      summary: Reintentar procesamiento de pago
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '202':
+          description: Retry aceptado
